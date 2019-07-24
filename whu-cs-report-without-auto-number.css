@@ -1,0 +1,355 @@
+@charset "utf-8";
+
+.custom-css-head {}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#write {
+  /* 正文：宋体 小四 */
+  font: 12pt SimSun;
+  text-align: justify;
+  white-space: pre-wrap;
+  text-indent: 0;
+}
+
+#write p {
+  text-indent: 2em;
+  line-height: 23pt;
+  letter-spacing: normal;
+}
+
+#write span {
+  text-indent: 0;
+}
+
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6 {
+  color: #000;
+  font-family: SimHei; /* 黑体 */
+  font-weight: bold;
+  text-indent: 0;
+}
+
+/* 总标题 */
+#write h1 {
+  font-size: 22pt; /* 黑体2号 */
+  text-align: center;
+  line-height: 32pt; /* 行间距32磅 */
+}
+
+/* 章标题 */
+#write h2 {
+  font-size: 18pt; /* 黑体小2号 */
+  text-align: center;
+  margin-top: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+#write h3 {
+  font-size: 14pt; /* 黑体4号 */
+  margin: 0.5em auto;
+}
+
+#write h4 {
+  font-size: 12pt; /* 黑体小4号 */
+}
+
+#write h5 {
+  font-size: 12pt; /* 黑体小4号 */
+}
+
+/* “郑重声明” 标题 */
+.solemn-statement-title {
+  font: 22pt SimSun;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* “郑重声明” 正文 */
+.solemn-statement-body {
+  font: 14pt SimSun;
+}
+
+/* “郑重声明” 签名处 */
+.solemn-statement-signature {
+  text-align: right;
+  white-space: pre;
+  font: 14pt SimSun;
+}
+
+/* 摘要标题 */
+.summary-title {
+  font: 18pt SimHei;
+  text-align: center;
+}
+
+/* 摘要关键字 */
+.summary-keyword-title {
+  font: 12pt SimHei;
+}
+
+/* “教师评语评分” 标题 */
+.teacher-comment-title {
+  font: 18pt SimSun;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* “教师评语评分” 正文 */
+.teacher-comment-body {
+  font-size: 14pt;
+  text-indent: 0;
+}
+
+/* “教师评语评分” 落款处 */
+.teacher-comment-signature {
+  font-size: 14pt;
+  text-align: right;
+  white-space: pre;
+  line-height:2.5;
+}
+
+/* 目录 */
+.toc-title {
+  font:bold 18pt SimHei;
+  text-align:center;
+}
+
+.md-toc-content {
+  color: #000;
+  font: 12pt SimSun;
+  text-indent: 0;
+}
+
+.md-toc-h1, .md-toc-h4, .md-toc-h4, .md-toc-h5, .md-toc-h6 {
+  display: none;
+}
+
+#write a.md-toc-inner {
+  color: #000;
+  margin: 0;
+}
+
+.md-toc-h2 .md-toc-inner {
+  font: bold 14pt SimHei;
+  text-align: left;
+}
+
+.md-toc-h3 .md-toc-inner {
+  line-height: 1.5;
+}
+
+/* 目录页码 */
+span.md-toc-item.md-toc-h2 a::after, span.md-toc-item.md-toc-h3 a::after { 
+  content: " " leader('·') target-counter(attr(href), page) ; 
+  font-family: "Times New Roman";
+}
+
+span.md-toc-item.md-toc-h2 a, span.md-toc-item.md-toc-h3 a{ 
+  display: block;
+}
+
+#write figure {
+  text-align: center;
+}
+
+/* 图标题 */
+#write figure figcaption {
+  text-align: center;
+}
+
+/* 表格 */
+
+#write table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: 10.5pt SimSun;
+}
+
+#write table th, #write table td {
+  padding: 0.5em 1em;
+  font-family: "Times New Roman" ,SimSun;
+  font-size: 10.5pt;
+}
+
+#write table .md-table-edit th {
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+#write table th, #write table td {
+  border-left: 0;
+  border-right: 0;
+}
+
+#write table th {
+  border-top: 1.5pt solid;
+  border-bottom: 0.5pt solid;
+}
+
+#write table tbody tr:last-of-type {
+  border-bottom: 1.5pt solid;
+}
+
+/* 表格标题 */
+#write table caption {
+  text-align: center;
+  font: 12pt SimHei;
+}
+
+/* 行内代码块 */
+#write code {
+  font-family: Consolas, Courier, 'Courier New', monospace;
+  border: 1px solid;
+  border-radius: 3px;
+  border-color: cornflowerblue;
+  background-color: aqua;
+  padding: 0.5px 3px;
+  word-break: break-all;
+}
+
+/* 代码块 */
+#write pre.md-fences {
+  border: 1px solid black;
+  padding-top: 10pt;
+  padding-bottom: 10pt;
+  break-inside: auto;
+}
+ 
+/* 在屏幕上仿Word显示 */
+@media screen {
+  html, body {
+    background: #eee;
+  }
+
+  #write {
+    /* 白色页面 */
+    background: #fff;
+
+    /* 页面为A4大小 */
+    max-width: 210mm;
+    min-height: 297mm;
+
+    /* 页边距: 上   左右  下 */
+    padding: 25mm 30mm 20mm;
+
+    /* 上下留空 */
+    margin: 1cm auto;
+
+    /* 阴影 */
+    box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
+  }
+}
+
+/***** 打印设置 *****/
+@media print {
+  html, body {
+    background-color: #fff;
+  }
+
+  #write {
+    width: initial !important;
+    min-height: initial !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: initial !important;
+    border-radius: initial !important;
+    background: initial !important;
+    box-shadow: initial !important;
+  }
+
+  /* 任意处强制分页：<div style="page-break-after: always" ></div> */
+  /* 或者 <hr class="page-break" ></hr> 以在编辑时可见*/
+  #write .page-break {
+    visibility: hidden;
+    break-after: page;
+  }
+
+  #write .no-print {
+    display: none;
+  }
+}
+
+.md-toc {
+  break-after: page;
+}
+
+/* 各章标题，中文摘要、结论、参考文献标题，目录标题前必须分页 */
+#write h2, .solemn-statement-title, .summary-title, .teacher-comment-title, .toc-title{
+  break-before: page;
+}
+
+/* 各级标题后不允许分页 */
+#write h1, h2, h3, h4, h5, h6 {
+  page-break-after: avoid;
+}
+
+/* 图和图序号、图标题中不得分页，表格也是如此 */
+#write figure {
+  page-break-inside: avoid;
+}
+
+#write h1 {
+  string-set: doctitle content();
+}
+
+@page {
+  size: A4 portrait;
+  margin: 25mm 30mm 20mm;
+
+  /* 页码 */
+  @bottom-center {
+    content: counter(page);
+    font: 10.5pt "Times new roman";
+  }
+
+  @top-center {
+    content: string(doctitle);
+    font: 10.5pt SimSun;
+  }
+}
+
+.pre-content {
+  page: pre-content;
+}
+
+@page:nth(1) {
+  @bottom-center {
+    content: none;
+  }
+}
+
+@page:nth(2) {
+  @bottom-center {
+    content: none;
+  }
+}
+
+@page:nth(3) {
+  @bottom-center {
+    content: none;
+  }
+}
+
+@page toc-pages {
+  @bottom-center {
+    content: none;
+  }
+}
+
+.toc-title, .md-toc {
+  page: toc-pages;
+}
+
+#write h2:first-of-type {
+  counter-reset: page 1;
+}
+
