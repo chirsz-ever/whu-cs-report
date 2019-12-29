@@ -20,7 +20,7 @@ html, body {
   text-indent: 0;
 }
 
-#write p {
+#write > p {
   text-indent: 2em;
   line-height: 23pt;
   letter-spacing: normal;
